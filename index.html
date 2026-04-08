@@ -3,43 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicken Wings Sandoná</title>
+    <title>Chicken Wings Sandoná | Alitas de Infarto</title>
     <style>
-        body { font-family: sans-serif; background-color: #0a0a0a; color: white; text-align: center; margin: 0; padding: 20px; }
-        .container { max-width: 400px; margin: auto; }
-        .logo-img { width: 100%; max-width: 250px; margin-bottom: 10px; }
-        .card { background: #1a1a1a; padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #333; }
-        .price { font-size: 2rem; color: #ff8c00; font-weight: bold; }
-        .btn { background: #25d366; color: white; text-decoration: none; padding: 15px 25px; border-radius: 30px; display: block; font-weight: bold; font-size: 1.2rem; margin-top: 10px; }
-        .promo { background: linear-gradient(45deg, #ff4500, #ff8c00); padding: 10px; border-radius: 10px; margin-bottom: 20px; font-weight: bold; }
+        /* Paleta de colores basada en el logo */
+        :root {
+            --negro-fondo: #0a0a0a;
+            --rojo-fuego: #d90429;
+            --naranja-fuego: #fb8500;
+            --amarillo-logo: #ffb703;
+            --blanco: #edf2f4;
+        }
+
+        body {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            margin: 0;
+            background-color: var(--negro-fondo);
+            color: var(--blanco);
+            text-align: center;
+        }
+
+        /* Sección del Logo */
+        .hero {
+            padding: 60px 20px;
+            background: radial-gradient(circle, #331100 0%, #0a0a0a 100%);
+        }
+
+        .logo-img {
+            max-width: 300px;
+            width: 100%;
+            filter: drop-shadow(0 0 20px var(--rojo-fuego));
+            margin-bottom: 20px;
+        }
+
+        h1 { color: var(--amarillo-logo); text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Sabores */
+        .sabores-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .sabor-item {
+            background: linear-gradient(145deg, #1a1a1a, #000000);
+            padding: 15px;
+            border-radius: 10px;
+            border-bottom: 3px solid var(--naranja-fuego);
+            font-weight: bold;
+        }
+
+        /* Menú y Precios */
+        .ofertas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: #111;
+            border: 2px solid var(--rojo-fuego);
+            border-radius: 20px;
+            padding: 25px;
+            width: 280px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 30px var(--rojo-fuego);
+            transform: translateY(-10px);
+        }
+
+        .card h3 { color: var(--naranja-fuego); font-size: 1.5rem; margin-top: 0; }
+
+        .precio-tag {
+            font-size: 2.2rem;
+            color: var(--blanco);
+            display: block;
+            margin: 15px 0;
+            text-shadow: 2px 2px var(--rojo-fuego);
+        }
+
+        .badge-gratis {
+            background: #25d366;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Botón WhatsApp */
+        .ws-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 18px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .ws-float:hover { background: #128c7e; transform: scale(1.1); }
+
+        footer { padding: 40px; color: #555; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://i.ibb.co/N6m6Ym6/Chicken-Wings-Logo.png" alt="Logo" class="logo-img">
-        
-        <h1>CHICKEN WINGS SANDONÁ</h1>
-        <p>📍 Sandoná, Nariño | Solo Domicilios</p>
 
-        <div class="promo">
-            🔥 FIN DE SEMANA: ¡Domicilio Incluido!
-        </div>
+    <section class="hero">
+        <img src="logo.png" alt="Chicken Wings Sandoná Logo" class="logo-img">
+        <h1>Sabor que Enciende tus Sentidos</h1>
+        <p>Los mejores fines de semana en Sandoná</p>
+    </section>
 
-        <div class="card">
-            <h3>Porción Individual</h3>
-            <p class="price">$17.000</p>
-            <p>6 Alitas crocantes + Papas + Ranch</p>
-        </div>
-
-        <div class="card">
-            <h3>SUPER PROMO 🚀</h3>
-            <p class="price">$30.000</p>
-            <p>12 Alitas crocantes + Papas + Ranch</p>
-        </div>
-
-        <a href="https://wa.me/573137462516?text=Hola!%20Quiero%20hacer%20un%20pedido" class="btn">
-            PEDIR POR WHATSAPP 🍗
-        </a>
+    <div class="sabores-container">
+        <div class="sabor-item">🔥 BBQ</div>
+        <div class="sabor-item">🍯 MIEL MOSTAZA</div>
+        <div class="sabor-item">🌶️ BÚFALO PICANTE</div>
+        <div class="sabor-item">🍋 LIMÓN PIMIENTA</div>
     </div>
+
+    <section class="ofertas">
+        <div class="card">
+            <h3>Combo Simple</h3>
+            <p>6 Alitas Apanadas + Papas Fritas + Aderezo Ranch</p>
+            <span class="precio-tag">$17,000</span>
+        </div>
+
+        <div class="card" style="border-color: var(--amarillo-logo);">
+            <h3>🔥 MEGA PROMO 🔥</h3>
+            <p>12 Alitas Apanadas + Papas Fritas + Aderezo Ranch</p>
+            <span class="precio-tag">$30,000</span>
+            <span class="badge-gratis">DOMICILIO GRATIS</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>CHICKEN WINGS SANDONÁ | Pedidos los fines de semana</p>
+    </footer>
+
+    <a href="https://wa.me/573137462516?text=¡Hola! Quiero pedir las alitas de la promoción de $30.000" class="ws-float" target="_blank">
+        ORDENAR AHORA 🍗
+    </a>
+
 </body>
 </html>
